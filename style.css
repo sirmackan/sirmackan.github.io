@@ -32,7 +32,7 @@ h1 {
 #boxes > div {
     background-color: rgba(0, 0, 0, 0.1);
 
-    margin: 2em;
+    margin: 2em 0;
     padding: 2em;
 
     font-size: 25pt;
