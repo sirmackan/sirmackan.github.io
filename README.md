@@ -1,1 +1,0 @@
-# sirmackan.github.io
