@@ -19,7 +19,9 @@ function main() {
             $(this).css('background-color', 'rgba(0, 0, 0, 0.5)');
             
             $(this).off("click").on("click", function() {
-                if (prompt("Lösenord") === $(this).attr("password")) {
+                const answer = prompt("Lösenord");
+
+                if (answer != null && answer.toLowerCase() === $(this).attr("password")) {
                     $("#price").html(fromBase64($(this).attr("price-html")));
                     $("#price").show();
                 }
