@@ -13,7 +13,7 @@ function main() {
         
         if (date > Date.now()) {
             $(this).html("Öppnar om " + formatTimeUntilDate(date));
-        } else {
+        } else if ($(this).html().length == 0) {
             $(this).html(fromBase64($(this).attr("active-html")));
             $(this).css('cursor', 'pointer');
             $(this).css('background-color', 'rgba(0, 0, 0, 0.5)');
