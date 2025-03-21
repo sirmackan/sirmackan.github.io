@@ -1,36 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-    <script src="app.js"></script>
-    <title>Göteborgsvarvet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
-    <div id="a">
-        <div id="b">
-            <table cellspacing="0">
-                <tr>
-                    <th>Vecka</th>
-                    <th>Låg pulszon (km)</th>
-                    <th>Hög pulszon (km)</th>
-                </tr>
-            </table>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap" rel="stylesheet">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        box-sizing: border-box;
+    }
 
-            <p>
-                <br><br>
-                Spring 2 - 3 gånger i veckan så att den totala distansen i vardera pulszon matchar tabellen ovan
-                <br><br>
-                Löpband ska ha minst 1% lutning
-                <br><br>
-                Låg pulszon: från (220 - din ålder) * 0.75 upp till 10 mer
-                <br><br>
-                Hög pulszon: från (220 - din ålder) * 0.9 upp till 10 mer
-            </p>
-        </div>
+    body {
+        background-color: #ff6cc3;
+        color: white;
+        text-align: center;
+        padding: 2em;
+    }
+
+    h1 {
+        font-family: "La Belle Aurore", cursive;
+    }
+
+    input, button {
+        border: 0;
+        padding: 1em;
+        font-size: 20px;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    img {
+        width: 100%;
+        padding: 2em;
+    }
+
+    div {
+        display: none;
+    }
+</style>
+<script>
+    function one() {
+      if (document.getElementById("one-answer").value.toLowerCase() === "varberg") {
+        document.getElementById("one").style.display = 'none';
+        document.getElementById("two").style.display = 'block';
+      } else {
+        alert("Tyvärr fel...");
+      }
+    }
+
+    function two() {
+      if (document.getElementById("two-answer").value.replaceAll(" ", "") === "44160") {
+        document.getElementById("two").style.display = 'none';
+        document.getElementById("three").style.display = 'block';
+      } else {
+        alert("Tyvärr fel...");
+      }
+    }
+</script>
+<body>
+    <span style="font-size: 7.5vw;">❤️</span>
+
+    <div id="one" style="display: block;">
+        <h1 style="font-size: 5vw;">I vilken ort blev vi ett par?</h1>
+        <input type="text" id="one-answer">
+        <button onclick="one()">OK</button>
+    </div>
+
+    <div id="two">
+        <img src="two.jpg">
+        <input type="text" id="two-answer">
+        <button onclick="two()">OK</button>
+    </div>
+
+    <div id="three">
+        <h1 style="font-size: 5vw;">Kolla bakom baslådan...</h1>
     </div>
 </body>
 </html>
