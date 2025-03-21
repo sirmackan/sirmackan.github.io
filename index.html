@@ -50,7 +50,7 @@
 </style>
 <script>
     function one() {
-      if (document.getElementById("one-answer").value.toLowerCase() === "varberg") {
+      if (document.getElementById("one-answer").value.replaceAll(" ", "").toLowerCase() === "varberg") {
         document.getElementById("one").style.display = 'none';
         document.getElementById("two").style.display = 'block';
       } else {
